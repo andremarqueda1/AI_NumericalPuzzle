@@ -65,12 +65,3 @@ Raiz.showNodeStatus()
 Raiz.recorrerArbol()
 
 
-"""
-nodo=Node([1,0,0,5,4])
-for i in range(9):
-    pass
-Raiz.insertNode(nodo)
-
-Raiz.hijos[0].printValue()
-Raiz.hijos[0].printPadre()
-"""
