@@ -14,8 +14,7 @@ class Node:
     def __init__(self, data):#Declaración del nodo
         self.data = data #Data será la lista que contendrá el estatus actual de las casillas
         self.hijos=[] #Hijos será una lista dado que es un arbol no binario
-        self.padre=None #Referencia al padre para realizar backtracking
-    
+        
     #Imprimir valor del nodo actual
     def printValue(self):
         print("Node Value",self.data)
@@ -24,10 +23,6 @@ class Node:
     def insertNode(self,node):
         self.hijos.append(node)
         node.padre=self
-    #BORRAR, imprime el valor del padre
-    def printPadre(self):
-        print("My father's value is")
-        self.padre.printValue()
     #Imprime el estatus general dado un nodo
     def showNodeStatus(self):
         print("El estado del nodo actual es")
@@ -72,14 +67,30 @@ def operadorRaiz(nodo):
  
  
             """
-
+def BFS(nodo,capa):
+    nodo.printValue()
+    sumaVertical=nodo.data[0]+nodo.data[2]+nodo.data[4]
+    sumaHorizontal=nodo.data[1]+nodo.data[2]+nodo.data[3]
+    if sumaHorizontal==9 and sumaVertical==9:
+        print("SOLUCIÓN ENCONTRADA: ",nodo.data)
+        
+    else:
+        for i in range (len(nodo.hijos)):
+            if len(nodo.hijos)!=0:
+                nodo.hijos[i].printValue()
+                
+            else:
+                print("Hoja")
+        for i in range(len(nodo.hijos)):
+            BFS(nodo.hijos[i],capa+1)
+        
     
     
 
 print ("Iniciando creación del árbol")
 Raiz=Node(INITIAL_STATE)
+print ("Aplicando operadores y realizando bitácora de desarrollo:")
 operadorRaiz(Raiz)
-Raiz.showNodeStatus()
-Raiz.recorrerArbol()
-
+print ("Buscando ruta solución:")
+BFS(Raiz,0)
 
