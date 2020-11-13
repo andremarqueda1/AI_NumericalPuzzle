@@ -1,7 +1,7 @@
 # AI_NumericalPuzzle
 Resolver el siguiente rompecabezas numérico por medio de una búsqueda ciega por amplitud.   
 
-Los números (1,2,3) deben ser colocados una sola vez en una casilla y la suma Horizontal y Vertical debe resultar en 9.
+Los números (1,2,3) deben ser colocados una sola vez en una casilla y la suma Horizontal y Vertical debe resultar en 9.<br>
 ![Puzzle](https://github.com/andremarqueda1/AI_NumericalPuzzle/blob/main/Puzzle.png)
 
 
