@@ -41,29 +41,37 @@ class Node:
     def recorrerArbol(self):
         for i in range(len(self.hijos)):
             self.hijos[i].printValue()
-    
+
+
+
+#Función que aplica los operadores de manera recursiva
 def operadorRaiz(nodo):
-    estadoActual=nodo.data[:]
-    operadoresDisponibles=CONSTANTES[:]
-    for i in range(3):
+    estadoActual=nodo.data[:]#Se obtiene el estado actual del nodo
+    operadoresDisponibles=CONSTANTES[:]#Se mantiene una bitácora de los operadores
+    for i in range(3):#El rango es a tres dado que por la implementación de la lista solo los primeros 3 lugares son las casillas a utilizar
         if nodo.data[i]!=0:#Si ya se utilizó un operador en alguno de las casillas disponibles
-            operadoresDisponibles.remove(nodo.data[i])
+            operadoresDisponibles.remove(nodo.data[i])#Se remueve de los operadores disponibles a utilizar
             
-    if len(operadoresDisponibles)!=0:
+    if len(operadoresDisponibles)!=0:#Si ya no quedan operadores, el nodo en materia es una hoja
         for i in range(len(operadoresDisponibles)):#Operadores disponibles
             estadoActual=nodo.data[:]
             for j in range(estadoActual.count(0)): #Contando el número de espacios vacios lo cual será equivalente al número de hijos
                 estadoActual=nodo.data[:]    
-                if estadoActual[j]==0:
-                    estadoActual[j]=operadoresDisponibles[i]
-                    hijo=Node(estadoActual)
-                    nodo.insertNode(hijo)
+                if estadoActual[j]==0:#Si la casilla está vacía
+                    estadoActual[j]=operadoresDisponibles[i]#Entonces se aplica el operador
+                    hijo=Node(estadoActual)#Se crea el nuevo nodo, con el operador aplicado
+                    nodo.insertNode(hijo)#Se inserta el nodo como hijo
                 else:
                     pass
         for i in range(len(nodo.hijos)):
-            operadorRaiz(nodo.hijos[i])
+            operadorRaiz(nodo.hijos[i])#Repetir este procedimiento para cada uno de los hijos
             
+            """
+            Implementar BFS para verificar la integridad del arbol 
+            Finalmente implementar lo de la ruta solución
  
+ 
+            """
 
     
     
