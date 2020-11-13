@@ -41,22 +41,27 @@ class Node:
     def recorrerArbol(self):
         for i in range(len(self.hijos)):
             self.hijos[i].printValue()
+    
+def operadorRaiz(nodo):
+    estadoActual=nodo.data[:]
+    operadoresDisponibles=CONSTANTES[:]
+    
+    for i in range(3):
+        if nodo.data[i]!=0:#Si ya se utilizó un operador en alguno de las casillas disponibles
+            operadoresDisponibles.remove(nodo.data[i])
+        else:
+            pass
+    for i in range(len(operadoresDisponibles)):#Operadores disponibles
+        estadoActual=nodo.data[:]
+        for j in range(estadoActual.count(0)): #Contando el número de espacios vacios lo cual será equivalente al número de hijos
+            estadoActual=nodo.data[:]    
+            estadoActual[j]=operadoresDisponibles[i]
+            hijo=Node(estadoActual)
+            nodo.insertNode(hijo)
+ 
 
-
-
-def operadorRaiz(padre):
-    for i in range(len(CONSTANTES)):#Operadores
-        for j in range(padre.data.count(0)): #Contando el número de espacios vacios lo cual será equivalente al número de hijos
-            temporalState=INITIAL_STATE[:]
-            temporalState[j]=CONSTANTES[i]
-            hijo=Node(temporalState)
-            padre.insertNode(hijo)
-            
-def capas(nodo):
     
     
-    pass
-
 
 print ("Iniciando creación del árbol")
 Raiz=Node(INITIAL_STATE)
