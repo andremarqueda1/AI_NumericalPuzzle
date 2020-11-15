@@ -89,5 +89,16 @@ BFS(Raiz,0)
 print("SOLUCIÓN ENCONTRADA, DETENIENDO PROCESO:\n",rutaSol)
 rutaSolucion(rutaSol)
 
+print("""   
+        |        |
+        |   %d    |
+________|________|_________
+        |        |
+   %d    |   %d    |    4
+________|________|_________
+        |        |
+        |   5    |
+        |        |
+      """ %(rutaSol[0],rutaSol[1],rutaSol[2]))
 
 
