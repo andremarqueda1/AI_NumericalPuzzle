@@ -14,13 +14,6 @@ Y al final dar la ruta de solución.
 
 ## ROMPECABEZAS NUMÉRICO
 
-Integrante: Narváez Marqueda Ricardo André Sebastián
-Número de cuenta 41705242-
-Grupo 5
-Fecha de ejecución: 12/11/
-Fecha de entrega 26/11/
-Profesora Dra. MARIA DEL CARMEN EDNA MARQUEZ MARQUEZ
-Semestre 2021-
 
 
 **Objetivos**
