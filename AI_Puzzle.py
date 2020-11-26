@@ -53,7 +53,7 @@ def operadorRaiz(nodo):
             operadorRaiz(nodo.hijos[i])#Repetir este procedimiento para cada uno de los hijos
             
         
-def BFS(nodo,flag):
+def OpRootCom(nodo,flag):
     if flag==False: #Si aún no se ha encontrado la solución, continuar iterando
         sumaVertical=nodo.data[0]+nodo.data[2]+nodo.data[4]#Comprobar que se cumpla la suma vertical del nodo actual
         sumaHorizontal=nodo.data[1]+nodo.data[2]+nodo.data[3]#Comprobar que se cumpla la suma horizontal del nodo actual
@@ -70,7 +70,7 @@ def BFS(nodo,flag):
                     if flag==True:#Si aun no se ha encontrado una solución
                         pass
                     else:
-                        BFS(nodo.hijos[i],flag=False) #Continuar recursivamente analizando los hijos siempre y cuando no sea una hoja, en ese caso
+                        OpRootCom(nodo.hijos[i],flag=False) #Continuar recursivamente analizando los hijos siempre y cuando no sea una hoja, en ese caso
                                                     #Regresar un nivel y analaizar los nodos hermanos
 
         
@@ -84,9 +84,8 @@ print ("Iniciando creación del árbol")
 Raiz=Node(INITIAL_STATE)
 print ("Aplicando operadores y realizando bitácora de desarrollo:")
 operadorRaiz(Raiz)
-print ("Buscando ruta solución:")
-BFS(Raiz,0)
-print("SOLUCIÓN ENCONTRADA, DETENIENDO PROCESO:\n",rutaSol)
+OpRootCom(Raiz,0)
+print("SOLUCIÓN ENCONTRADA, DETENIENDO PROCESO CREACIÓN:\n",rutaSol)
 rutaSolucion(rutaSol)
 
 print("""   
